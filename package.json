@@ -30,13 +30,14 @@
     "styled-components": "^6.1.15",
     "web-vitals": "^4.2.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "postbuild": "cross-env NODE_ENV=production && node scripts/copyFile.js",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
+ "scripts": {
+  "start": "react-scripts start",
+  "build": "CI=false react-scripts build",
+  "postbuild": "cross-env NODE_ENV=production && node scripts/copyFile.js",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject"
+},
+
   "eslintConfig": {
     "extends": [
       "react-app",
