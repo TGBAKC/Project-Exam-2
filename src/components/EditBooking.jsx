@@ -78,7 +78,8 @@ const EditBookingPage = () => {
     } else {
       fetchBookingDetails();
     }
-  }, [id]);
+  }, [id, fetchBookingDetails, location.state?.booking]);  // Eksik bağımlılıklar eklendi ✅
+  
 
   const fetchBookingDetails = async () => {
     const token = localStorage.getItem("authToken");

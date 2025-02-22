@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 // 🎨 Kart ve İçerik Tasarımı
@@ -35,35 +35,11 @@ const InfoText = styled.p`
   margin: 8px 0;
 `;
 
-const ButtonContainer = styled.div`
-  display: flex;
-  gap: 12px;
-  margin-top: 20px;
-`;
-
-// 🎨 Buton Tasarımı
-const Button = styled.button`
-  background: ${(props) => props.bgColor || "#ccc"};
-  color: ${(props) => (props.bgColor === "#dc3545" ? "#fff" : "#000")};
-  padding: 12px 18px;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-  &:hover {
-    opacity: 0.85;
-    transform: translateY(-2px);
-  }
-`;
-
 const ConfirmPage = () => {
   const location = useLocation();
-  const navigate = useNavigate();
   const bookingDetails = location.state || {}; 
 
-  const { id, venueName, startDate, endDate, guests } = bookingDetails;
+  const { venueName, startDate, endDate, guests } = bookingDetails;
 
   if (!bookingDetails || Object.keys(bookingDetails).length === 0) {
     return (
@@ -73,50 +49,6 @@ const ConfirmPage = () => {
       </Container>
     );
   }
-
-  const handleDelete = async () => {
-    const token = localStorage.getItem("authToken");
-    if (!id || id === "undefined") {
-      alert("❌ Error: Invalid Booking ID!");
-      return;
-    }
-
-    try {
-      const response = await fetch(
-        `https://v2.api.noroff.dev/holidaze/bookings/${id}`,
-        {
-          method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-      const responseData = await response.json();
-      if (!response.ok) {
-        throw new Error(
-          `❌ API Error: ${
-            responseData.message || "Failed to delete booking"
-          } (Status: ${response.status})`
-        );
-      }
-
-      alert("✅ Booking deleted successfully!");
-      navigate("/dashboard");
-    } catch (error) {
-      alert("Error deleting booking: " + error.message);
-    }
-  };
-
-  const handleEdit = () => {
-    console.log("🟢 Edit butonuna basıldı, yönlendiriliyor...");
-    if (!bookingDetails.id) {
-      alert("❌ Error: Invalid Booking ID!");
-      return;
-    }
-    navigate(`/bookings/${bookingDetails.id}/edit`, { state: { booking: bookingDetails } });
-  };
 
   return (
     <Container>
@@ -134,8 +66,6 @@ const ConfirmPage = () => {
       <InfoText>
         <strong>👤 Guests:</strong> {guests}
       </InfoText>
-
-    
     </Container>
   );
 };
