@@ -1,70 +1,143 @@
-# Getting Started with Create React App
+# 🌍 Holidaze - Accommodation Booking Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Netlify Status](image)](https://www.netlify.com/)
 
-## Available Scripts
+Holidaze is a modern, responsive accommodation booking web application developed as part of my final exam project in frontend development. This application serves both a **customer-facing side**—allowing users to browse and book holiday venues—and an **admin-facing side**—enabling venue managers to register, manage venues, and handle bookings.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📜 Table of Contents
+- [Project Overview](#project-overview)
+- [Project Goals](#project-goals)
+- [Features & User Stories](#features--user-stories)
+- [Technical Requirements & Restrictions](#technical-requirements--restrictions)
+- [Configured With](#configured-with)
+- [API Documentation](#api-documentation)
+- [Design & Planning Resources](#design--planning-resources)
+- [Setup & Installation](#setup--installation)
+- [Acknowledgements](#acknowledgements)
+- [Contact](#contact)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📖 Project Overview
+Holidaze is an accommodation booking platform created for a newly launched service. The project involves building a **frontend application** based on an existing API, as documented in the **Noroff API Documentation**.
 
-### `npm test`
+### 🔹 **Application Sections:**
+- **Customer Side:** Users can view a list of venues, search for a specific venue, check availability, and make bookings.
+- **Admin Side:** Users with a **stud.noroff.no email** can register as **venue managers**, create/update/delete venues, and manage bookings.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project demonstrates my ability to design and develop a **full-featured frontend application** using modern web development practices.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🎯 Project Goals
+- **Demonstrate Development Capabilities:** Showcase comprehensive frontend development skills acquired over the last two years.
+- **User Experience & Design:** Deliver an intuitive and responsive UI that enhances user engagement.
+- **API Integration:** Seamlessly integrate with an existing API to manage all booking functionalities.
+- **Technical Proficiency:** Utilize approved technologies and tools as specified in the project brief.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ✨ Features & User Stories
+### 🏠 **Venue Browsing & Searching**
+- A user may view a list of venues.
+- A user may search for a specific venue.
+- A user may view a specific venue page by ID.
+- A user may view a calendar with available dates for a venue.
 
-### `npm run eject`
+### 🛒 **Customer Functionality**
+- A user with a **stud.noroff.no** email may register as a customer.
+- A registered customer may **create a booking** at a venue.
+- A registered customer may **view their upcoming bookings**.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🏨 **Venue Manager Functionality**
+- A user with a **stud.noroff.no** email may register as a venue manager.
+- A registered venue manager may **create a venue**.
+- A registered venue manager may **update a venue they manage**.
+- A registered venue manager may **delete a venue they manage**.
+- A registered venue manager may **view bookings for a venue they manage**.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 🔑 **User Account Management**
+- A registered user may **log in**.
+- A registered user may **update their avatar**.
+- A registered user may **log out**.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🔧 Technical Requirements & Restrictions
+- **JavaScript Framework:** Must use an approved framework (e.g., React v16+).  
+  ✅ **The project uses React v19**
+- **CSS Framework:** Must use an approved framework (e.g., Bootstrap v5+, Tailwind v3+, MUI v5+, Styled Components, or CSS Modules).  
+  ✅ **The project uses Tailwind v3.4.17**
+- **Hosting:** The application must be hosted on an approved static host (e.g., GitHub Pages or Netlify).  
+  ✅ **Hosted on Netlify**
+- **Design & Planning Tools:** Planning done with **GitHub Projects**, design created with **Figma**.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## ⚙️ Configured With
+- **Vite** (Fast development environment)
+- **Prettier** (Code formatting)
+- **ESLint** (Linting and best practices)
+- **PostCSS** (Advanced CSS transformations)
+- **Lint-Staged & Husky** (Git hooks for better code quality)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 📡 API Documentation
+All backend functionality is managed through the **Noroff API**.  
+🔗 **API Documentation:** [Noroff API Docs](#)  
+🔗 **API Swagger:** [View API Reference](#)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🎨 Design & Planning Resources
+- **Design Prototype:** [View Prototype](#)
+- **Style Guide:** [View Style Guide](#)
+- **Gantt Chart:** [View Gantt Chart](#)
+- **Kanban Board:** [View Kanban Board](#)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🏗 Setup & Installation
+### 🔹 **Clone the Repository**
+```sh
+  git clone https://github.com/yourusername/holidaze.git
+  cd holidaze
+```
+### 🔹 **Install Dependencies**
+```sh
+  npm install
+```
+### 🔹 **Configure Environment Variables**
+Create a `.env` file in the root directory and add any required environment variables as specified in the documentation:
+```sh
+VITE_API_KEY=<YOUR_API_KEY>
+VITE_API_URL=<YOUR_API_BASE_URL>
+```
+### 🔹 **Run the Application**
+```sh
+  npm run dev
+```
+The application should now be running on **http://localhost:5173**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 🔹 **Build for Production**
+```sh
+  npm run build
+```
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🙌 Acknowledgements
+This project was developed as a part of my **final exam** in frontend development. Special thanks to:
+- **Noroff Team** for API documentation and project resources.
+- **Peers, Mentors & Instructors** for guidance and feedback.
+- **The Frontend Community** for sharing valuable resources.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📬 Contact
+[![Contact](image)](#)  
+For any questions or feedback, feel free to reach out! 🚀
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
