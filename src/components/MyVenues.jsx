@@ -9,7 +9,10 @@ const Container = styled.div`
   background-color: #f8f9fa;
   min-height: 100vh;
 `;
-
+const Title = styled.h1`
+  margin-bottom: 20px;
+  color: #003366;
+`;
 
 const VenueCard = styled.div`
   background: #ffffff;
@@ -26,7 +29,9 @@ const VenueCard = styled.div`
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
   }
 `;
-
+const VenueName = styled.h2`
+  color: #0055aa;
+`;
 
 const Button = styled.button`
   background: linear-gradient(135deg, #003366, #0055aa);
@@ -99,13 +104,13 @@ const MyVenues = () => {
 
   return (
     <Container>
-      <h1 style={{ marginBottom: "20px", color: "#003366" }}>My Venues</h1>
+         <Title>My Venues</Title>
       {venues.length === 0 ? (
         <p>You haven't created any venues yet.</p>
       ) : (
         venues.map((venue) => (
           <VenueCard key={venue.id}>
-            <h2 style={{ color: "#0055aa" }}>{venue.name}</h2>
+          <VenueName>{venue.name}</VenueName>
             <p>
               <strong>📍 Address:</strong> {venue.location?.address}, {venue.location?.city},{" "}
               {venue.location?.zip}, {venue.location?.country}

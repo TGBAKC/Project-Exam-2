@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
-// 🎨 Kart ve İçerik Tasarımı
 const Container = styled.div`
   display: flex;
   flex-direction: column;

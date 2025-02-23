@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp, faCalendar, faUser, faEnvelope, faMoneyBillWave } from "@fortawesome/free-solid-svg-icons";
 
-// 📌 Stil Ayarları
+
 const BookingContainer = styled.div`
   background-color: #f4f8ff;
   border-radius: 12px;
@@ -60,16 +60,16 @@ const ToggleButton = styled.button`
 const BookingListItem = ({ booking }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log("📌 Booking Data:", booking); // 🟢 Gelen veriyi görmek için
+  console.log("📌 Booking Data:", booking); 
 
-  // 📌 API'den fiyatın doğru yerden alındığını kontrol edelim
-  const pricePerNight = booking.venue?.price ?? 0; // Eğer `booking.venue.price` yoksa varsayılan 0 yap
-  const guests = booking.guests ?? 1; // Eğer `booking.guests` undefined ise 1 yap
-  const totalPrice = ((pricePerNight * guests) || 0).toFixed(2); // Hesaplama hatasını önleyelim
+ 
+  const pricePerNight = booking.venue?.price ?? 0; 
+  const guests = booking.guests ?? 1; 
+  const totalPrice = ((pricePerNight * guests) || 0).toFixed(2); 
 
   return (
     <BookingContainer>
-      {/* 📌 Üst Satır */}
+ 
       <BookingHeader onClick={() => setIsOpen(!isOpen)}>
         <span>{booking.venue?.name || "Unknown Venue"}</span>
         <span>
@@ -82,7 +82,7 @@ const BookingListItem = ({ booking }) => {
         </ToggleButton>
       </BookingHeader>
 
-      {/* 📌 Açılınca Gözükecek Detaylar */}
+    
       {isOpen && (
         <DetailsContainer>
           <h3>📖 Booking Details</h3>

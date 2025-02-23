@@ -15,17 +15,17 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
 
-  // Kullanıcı giriş bilgilerini güncelle
+ 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // API Key oluşturma fonksiyonu
+
   const createApiKey = async () => {
     try {
       const token = localStorage.getItem("authToken");
       if (!token) {
-        console.error("❌ API Key oluşturulamadı: Kullanıcı giriş yapmamış.");
+        console.error("❌ API Key could not be generated: User is not logged in.");
         return;
       }
 
@@ -41,17 +41,17 @@ const LoginPage = () => {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || "API Key oluşturulamadı.");
+        throw new Error(data.message ||"API Key could not be generated.");
       }
 
-      console.log("✅ API Key oluşturuldu:", data.data.key);
+      console.log( "✅ API Key has been generated:", data.data.key);
       localStorage.setItem("apiKey", data.data.key);
     } catch (error) {
-      console.error("❌ API Key oluşturma hatası:", error.message);
+      console.error( "API Key generation error.", error.message);
     }
   };
 
-  // Kullanıcı giriş yapma fonksiyonu
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -70,17 +70,17 @@ const LoginPage = () => {
         throw new Error(data.message || "Invalid email or password");
       }
 
-      // Kullanıcı giriş yaptıysa token'ı kaydet
+      
       localStorage.setItem("user", JSON.stringify(data.data));
       localStorage.setItem("authToken", data.data.accessToken);
       window.dispatchEvent(new Event("storage"));
 
-      // 📌 API Key’i kontrol et, eğer yoksa oluştur
+      
       if (!localStorage.getItem("apiKey")) {
         await createApiKey();
       }
 
-      // Kullanıcıyı yönlendir
+     
       navigate("/dashboard");
     } catch (error) {
       console.error("Login failed:", error.message);

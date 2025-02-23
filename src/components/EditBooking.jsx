@@ -66,20 +66,6 @@ const EditBookingPage = () => {
     guests: 1,
   });
 
-  // 📌 Eğer `location.state` içinde bilgi yoksa, API'den çek
-  useEffect(() => {
-    if (location.state?.booking) {
-      setBookingDetails(location.state.booking);
-      setEditedBooking({
-        startDate: location.state.booking.startDate,
-        endDate: location.state.booking.endDate,
-        guests: location.state.booking.guests,
-      });
-    } else {
-      fetchBookingDetails();
-    }
-  }, [id, fetchBookingDetails, location.state?.booking]);  // Eksik bağımlılıklar eklendi ✅
-  
 
   const fetchBookingDetails = async () => {
     const token = localStorage.getItem("authToken");
@@ -90,12 +76,12 @@ const EditBookingPage = () => {
           "Content-Type": "application/json",
         },
       });
+  
       const data = await response.json();
-
       if (!response.ok) {
         throw new Error("Failed to fetch booking details");
       }
-
+  
       setBookingDetails(data);
       setEditedBooking({
         startDate: data.startDate,
@@ -107,6 +93,12 @@ const EditBookingPage = () => {
       alert("Error fetching booking data!");
     }
   };
+  
+ 
+  useEffect(() => {
+    fetchBookingDetails();
+  }, [id, location.state?.booking]);  
+  
 
   const handleChange = (e) => {
     setEditedBooking({ ...editedBooking, [e.target.name]: e.target.value });

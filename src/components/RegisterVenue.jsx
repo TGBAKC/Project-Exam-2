@@ -126,7 +126,7 @@ function RegisterVenue() {
       });
 
       const responseData = await response.json();
-      console.log("🟢 API Yanıtı:", responseData);
+      console.log("🟢 API :", responseData);
 
       if (responseData.errors) {
         alert(`❌ API Hatası: ${responseData.errors[0]?.message || "Bilinmeyen hata"}`);
@@ -143,7 +143,7 @@ function RegisterVenue() {
       const venueId = responseData?.data?.id || responseData?.id;
       if (!venueId) {
         console.error("❌ Venue ID alınamadı!", responseData);
-        alert("❌ Venue ID alınamadı! Lütfen tekrar deneyin.");
+        alert("Venue ID could not be retrieved! Please try again.");
         setLoading(false);
         return;
       }

@@ -27,9 +27,9 @@ const HomePage = () => {
       }
 
       const data = await response.json();
-      console.log("API Raw Response:", data); // ✅ API yanıtını konsola yazdır
+      console.log("API Raw Response:", data); 
 
-      const venuesList = data.data || data; // ✅ Eğer `data.data` yoksa direkt `data` kullan
+      const venuesList = data.data || data; 
 
       const filteredData = venuesList
         .filter((venue) =>
@@ -37,7 +37,7 @@ const HomePage = () => {
         )
         .map((venue) => ({
           ...venue,
-          media: venue.media || [], // Eğer medya eksikse boş array ata
+          media: venue.media || [], 
         }));
 
       setVenues(filteredData);

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-// 🎨 Styled Components
 const Container = styled.div`
   text-align: center;
   padding: 20px;
@@ -79,7 +78,7 @@ const EditVenue = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // ✅ API'den mekan detaylarını al
+ 
   useEffect(() => {
     const fetchVenueDetails = async () => {
       try {
@@ -115,7 +114,6 @@ const EditVenue = () => {
     fetchVenueDetails();
   }, [id]);
 
-  // ✅ Formdaki değişiklikleri yönet
   const handleChange = (e) => {
     const { name, value } = e.target;
     setVenueData((prevState) => {
@@ -199,7 +197,6 @@ const EditVenue = () => {
     }
   };
 
-  // ✅ Mekanı Silme İşlevi
   const handleDelete = async () => {
     const confirmDelete = window.confirm("⚠ Are you sure you want to delete this venue?");
     if (!confirmDelete) return;
@@ -272,7 +269,7 @@ const EditVenue = () => {
           required
         />
   
-        {/* 📸 Media URLs Input */}
+       
         <Label>Media URLs (comma separated):</Label>
         <Input
           type="text"
@@ -283,7 +280,7 @@ const EditVenue = () => {
           required
         />
   
-        {/* 📍 Location Inputs */}
+        
         <Label>Address:</Label>
         <Input
           type="text"
@@ -324,7 +321,6 @@ const EditVenue = () => {
           required
         />
   
-        {/* 🖊️ Güncelle ve Silme Butonları */}
         <UpdateButton type="submit">Update Venue</UpdateButton>
         <DeleteButton type="button" onClick={handleDelete}>
           Delete Venue

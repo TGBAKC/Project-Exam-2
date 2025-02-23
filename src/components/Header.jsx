@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 
 
-// 🎨 Dark Mode için Global CSS
 const GlobalStyle = createGlobalStyle`
   body.dark-mode {
     background-color: #121212;
@@ -15,11 +14,30 @@ const GlobalStyle = createGlobalStyle`
   body.dark-mode header {
     background-color: #333;
   }
+     body.dark-mode h1{
+       color:black;
+     
+     }
+        body.dark-mode label{
+       color:black;
+     
+     }
   body.dark-mode button {
     color: white;
   }
 `;
-
+const MenuContainer = styled.div`
+  position: relative;
+`;
+const AvatarButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+`;
+const StyledLink = styled(Link)`
+  color: #fff;
+  text-decoration: none;
+`;
 const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
@@ -59,13 +77,13 @@ const DropdownMenu = styled.div`
 const Logo = styled(Link)`
   font-family: 'Mountains of Christmas'; 
   font-size: 1.9rem;
-  color: white; /* Kırmızımsı tatil temalı renk */
-  text-shadow: 2px 2px 5px rgba(255, 77, 77, 0.5); /* Hafif gölge efekti */
-  text-decoration: none; /* Alt çizgi olmasın */
+  color: white;
+  text-shadow: 2px 2px 5px rgba(255, 77, 77, 0.5);
+  text-decoration: none; 
   transition: color 0.3s ease-in-out;
 
   &:hover {
-    color: #ff6666; /* Hover efekti */
+    color: #ff6666; 
   }
 `;
 const MenuItem = styled.li`
@@ -105,7 +123,7 @@ const Header = () => {
     console.log("Dark Mode LocalStorage Güncelleniyor:", darkMode);
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
 
-    // 🌙 Dark Mode Aktif/Pasif Etme
+    
     if (darkMode) {
       document.body.classList.add("dark-mode");
     } else {
@@ -130,21 +148,16 @@ const Header = () => {
 
   return (
     <>
-      <GlobalStyle /> {/* 🔥 Dark Mode CSS eklendi */}
+      <GlobalStyle /> 
       <HeaderContainer>
       <Logo to="/">Holidaze</Logo>
 
         <Nav>
           {!user ? (
-            <Link to="/login" style={{ color: "#fff", textDecoration: "none" }}>
-              Login
-            </Link>
+            <StyledLink to="/login">Login</StyledLink>
           ) : (
-            <div style={{ position: "relative" }}>
-              <button
-                onClick={() => setMenuOpen(!menuOpen)}
-                style={{ background: "none", border: "none", cursor: "pointer" }}
-              >
+            <MenuContainer>
+               <AvatarButton onClick={() => setMenuOpen(!menuOpen)}>
                 <UserAvatar
                   src={
                     user?.avatar?.url ||
@@ -152,7 +165,7 @@ const Header = () => {
                   }
                   alt="User Avatar"
                 />
-              </button>
+                </AvatarButton>
 
               {menuOpen && (
                 <DropdownMenu>
@@ -179,7 +192,7 @@ const Header = () => {
                   </ul>
                 </DropdownMenu>
               )}
-            </div>
+           </MenuContainer>
           )}
         </Nav>
       </HeaderContainer>

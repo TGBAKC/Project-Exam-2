@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 
-// 🎨 Styled Components
+
 const Container = styled.div`
   text-align: center;
   padding: 20px;
@@ -80,7 +80,7 @@ const DashboardPage = () => {
     setIsVenueManager(true);
     localStorage.setItem("user", JSON.stringify(updatedUser));
 
-    // Kullanıcıyı hemen yönlendirme, önce "Welcome" mesajını göster
+    
     setShowRegisterButton(true);
   };
 
@@ -92,7 +92,7 @@ const DashboardPage = () => {
     <Container>
       <h1>Dashboard</h1>
 
-      {/* Avatar ve düzenleme ikonu */}
+      
       <AvatarContainer>
         {user?.avatar?.url ? (
           <AvatarImage
@@ -106,7 +106,7 @@ const DashboardPage = () => {
         ) : (
           <p>No Avatar Available</p>
         )}
-        {/* Kalem simgesi */}
+  
         <EditIcon
           icon={faPencilAlt}
           onClick={goToAvatarPage}
@@ -124,7 +124,7 @@ const DashboardPage = () => {
         <strong>Venue Manager:</strong> {isVenueManager ? "Yes" : "No"}
       </p>
 
-      {/* Venue Manager Butonları */}
+      
       {!isVenueManager ? (
         <Button primary onClick={becomeVenueManager}>
           Become a Venue Manager
