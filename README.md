@@ -69,8 +69,7 @@ This project demonstrates my ability to design and develop a **full-featured fro
 - **JavaScript Framework:** Must use an approved framework (e.g., React v16+).  
   ✅ **The project uses React v19**
 - **CSS Framework:** Must use an approved framework (e.g., Bootstrap v5+, Tailwind v3+, MUI v5+, Styled Components, or CSS Modules).  
-  ✅ **The project uses Tailwind v3.4.17**
-- **Hosting:** The application must be hosted on an approved static host (e.g., GitHub Pages or Netlify).  
+  
   ✅ **Hosted on Netlify**
 - **Design & Planning Tools:** Planning done with **GitHub Projects**, design created with **Figma**.
 
@@ -130,10 +129,7 @@ The application should now be running on **http://localhost:5173**.
 ---
 
 ## 🙌 Acknowledgements
-This project was developed as a part of my **final exam** in frontend development. Special thanks to:
-- **Noroff Team** for API documentation and project resources.
-- **Peers, Mentors & Instructors** for guidance and feedback.
-- **The Frontend Community** for sharing valuable resources.
+Thank you to everyone who supported me throughout this project, including my mentors, peers, and the Noroff team.This project was developed as part of my frontend development studies. It represents my ability to build a complete, functional web application from scratch.
 
 ---
 
