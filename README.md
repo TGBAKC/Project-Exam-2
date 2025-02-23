@@ -1,6 +1,6 @@
 # 🌍 Holidaze - Accommodation Booking Platform
 
-[![Netlify Status](image)](https://www.netlify.com/)
+![Screenshot](image.png)
 
 Holidaze is a modern, responsive accommodation booking web application developed as part of my final exam project in frontend development. This application serves both a **customer-facing side**—allowing users to browse and book holiday venues—and an **admin-facing side**—enabling venue managers to register, manage venues, and handle bookings.
 
@@ -77,10 +77,10 @@ This project demonstrates my ability to design and develop a **full-featured fro
 ---
 
 ## ⚙️ Configured With
-- **Vite** (Fast development environment)
+- 
 - **Prettier** (Code formatting)
 - **ESLint** (Linting and best practices)
-- **PostCSS** (Advanced CSS transformations)
+ - **Styled Components (for styling enhancements)
 - **Lint-Staged & Husky** (Git hooks for better code quality)
 
 ---
