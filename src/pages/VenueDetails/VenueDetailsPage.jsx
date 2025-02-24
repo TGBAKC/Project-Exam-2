@@ -106,6 +106,14 @@ const VenueDetailsPage = () => {
   }, [id]);
 
   const handleConfirm = () => {
+    const token = localStorage.getItem("authToken");
+  
+    if (!token) {
+      alert("⚠ You must be logged in to book a venue!");
+      navigate("/login"); 
+      return;
+    }
+  
     navigate("/confirm", {
       state: {
         id: venue.id,
@@ -116,7 +124,7 @@ const VenueDetailsPage = () => {
       },
     });
   };
-
+  
   if (loading) return <Text>Loading venue details...</Text>;
   if (error || !venue) return <Text>Failed to load venue details.</Text>;
 
